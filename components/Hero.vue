@@ -1,6 +1,6 @@
 <template>
-  <div class="container-fluid">
-    <div class="row">
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">
       <div class="col">
         <img src="~assets/images/logo.png" alt="logo" />
 
@@ -299,26 +299,6 @@ p {
 
 .fade-enter h3 {
   transform: translateX(0);
-}
-
-// TEAM MEMBER TRANSITIONS
-
-.team-fade-enter-active,
-.team-fade-leave-active {
-  transition: all 0.35s ease;
-}
-
-.team-fade-enter,
-.team-fade-leave-active {
-  opacity: 0;
-}
-
-.team-fade-enter {
-  transform: translateX(61px);
-}
-
-.team-fade-enter.slide-left {
-  transform: translateX(-61px);
 }
 
 .slider {
