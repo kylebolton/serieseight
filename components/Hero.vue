@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid p-0 h-100">
     <div class="row no-gutters h-100 justify-content-center align-items-center">
-      <div class="col">
+      <div class="col p-5">
         <img src="~assets/images/logo.png" alt="logo" />
 
         <h1>Create, share and <span>earn</span></h1>
@@ -16,76 +16,25 @@
         <button type="button" class="btn btn-primary">Become a creator</button>
       </div>
       <div class="col">
-        <img
-          src="~assets/images/background.png"
-          class="hero__background-image"
-        />
+        <img src="~assets/images/hero.png" class="hero__background-image" />
 
-        <div class="hero__images">
-          <div class="hero__button-right" @click="slideRight">></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- div
-    v-touch:swipe.left="slideLeft"
-    v-touch:swipe.right="slideRight"
-    class="row row--thoughts"
-  >
-    <div class="staff-slider col col-4 col-stack">
-      <div class="team-slider-profile-pic">
-        <div class="team-image-slider">
-          <transition name="team-fade">
+        <transition name="fade">
+          <div class="hero__images">
             <div
+              class="hero__images--container"
               v-for="(slide, index) in slides"
               v-if="activeSlide === index"
-              :class="{ 'slide-left': slideDirection == 1 }"
+              :class="{ 'slide-left': slideDirection == 0 }"
               :key="index"
-              class="slide"
             >
               <img :src="require(`~/assets/images/${slide.photo}`)" alt="" />
             </div>
-          </transition>
-        </div>
-      </div>
-    </div>
-    <div class="column-5 col col-8 col-stack slider-content">
-      <h3>Thoughts from our team</h3>
-      <div class="slider-container">
-        <transition name="fade">
-          <div
-            v-for="(slide, index) in slides"
-            v-if="activeSlide === index"
-            :class="{ 'slide-left': slideDirection == 0 }"
-            :key="index"
-            class="slider"
-          >
-            <p v-html="slide.quote"></p>
-            <h3 class="team-author">{{ slide.author }},</h3>
-            <h3 class="job-title">{{ slide.title }}</h3>
+            <div class="hero__button-right" @click="slideRight">></div>
           </div>
         </transition>
       </div>
-      <div class="button-container">
-        <div
-          class="team-slider-button team-slider-button__left"
-          @click="slideLeft"
-        >
-          <img src="~/assets/images/hero.png" alt="" class="arrow-image-left" />
-        </div>
-        <div
-          class="team-slider-button team-slider-button__right"
-          @click="slideRight"
-        >
-          <img
-            src="~/assets/images/hero.png"
-            alt=""
-            class="arrow-image-right"
-          />
-        </div>
-      </div>
     </div>
-   /div -->
+  </div>
 </template>
 
 <script>
@@ -97,13 +46,13 @@ export default {
       slideDirection: 0,
       slides: [
         {
-          photo: "hero.png"
+          photo: "phone1.png"
         },
         {
-          photo: "hero.png"
+          photo: "phone1.png"
         },
         {
-          photo: "hero.png"
+          photo: "phone1.png"
         }
       ]
     };
@@ -114,10 +63,6 @@ export default {
   methods: {
     clearIntervalSlider() {
       clearInterval(this.changeInterval);
-    },
-    slideLeft() {
-      this.previousSlide();
-      this.clearIntervalSlider();
     },
     slideRight() {
       this.nextSlide();
@@ -143,6 +88,13 @@ export default {
     width: 100%;
   }
 
+  &__images {
+    &--container {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
   &__button-right {
     background: #171d33;
     color: #fff;
@@ -155,6 +107,7 @@ export default {
     right: 5%;
   }
 }
+
 .container--thoughts {
   height: 100%;
   position: relative;
