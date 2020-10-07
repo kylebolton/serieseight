@@ -1,6 +1,6 @@
 <template>
-  <div class="container-fluid p-0">
-    <div class="row no-gutters">
+  <div class="container-fluid p-0 h-100">
+    <div class="row no-gutters h-100 justify-content-center align-items-center">
       <div class="col">
         <img src="~assets/images/logo.png" alt="logo" />
 
@@ -20,6 +20,10 @@
           src="~assets/images/background.png"
           class="hero__background-image"
         />
+
+        <div class="hero__images">
+          <div class="hero__button-right" @click="slideRight">></div>
+        </div>
       </div>
     </div>
   </div>
@@ -93,31 +97,19 @@ export default {
       slideDirection: 0,
       slides: [
         {
-          author: "Hanna-Mari",
-          title: "Engineering Team Lead",
-          photo: "hero.png",
-          quote:
-            "Monese has provided me with amazing learning opportunities and tremendous career growth. If you’re willing to learn and contribute, there’s no limit to what you can achieve here."
+          photo: "hero.png"
         },
         {
-          author: "Arina",
-          title: "Customer Support Agent",
-          photo: "hero.png",
-          quote:
-            "Working in customer support at Monese is amazingly challenging but working with such an awesome team, which I consider my second family, makes you truly realise that nothing is impossible."
+          photo: "hero.png"
         },
         {
-          author: "Hobart",
-          title: "iOS Chapter Lead",
-          photo: "hero.png",
-          quote:
-            "Working at Monese means working in a coding environment that’s creative, collaborative and cutting edge."
+          photo: "hero.png"
         }
       ]
     };
   },
   mounted() {
-    this.changeInterval = setInterval(() => this.nextSlide(), 6000);
+    this.changeInterval = setInterval(() => this.nextSlide(), 10000);
   },
   methods: {
     clearIntervalSlider() {
@@ -149,6 +141,18 @@ export default {
 .hero {
   &__background-image {
     width: 100%;
+  }
+
+  &__button-right {
+    background: #171d33;
+    color: #fff;
+    font-size: 36px;
+    cursor: pointer;
+    border-radius: 300px;
+    padding: 30px 45px;
+    position: absolute;
+    top: 50%;
+    right: 5%;
   }
 }
 .container--thoughts {
