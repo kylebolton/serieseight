@@ -7,6 +7,18 @@ export default {};
 </script>
 
 <style>
+body {
+  font-family: "Gilroy";
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("~assets/fonts/Gilroy/Gilroy-Regular.otf") format("woff");
+}
+
 .container {
   margin: 0 auto;
   min-height: 100vh;

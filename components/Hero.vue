@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid p-0 h-100">
+  <div class="container-fluid p-0 h-100 hero">
     <div class="row no-gutters h-100 justify-content-center align-items-center">
       <div class="col p-5">
         <img src="~assets/images/logo.png" alt="logo" />
@@ -83,9 +83,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url("~assets/fonts/Gilroy/Gilroy-Bold.otf") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: medium;
+  font-display: swap;
+  src: url("~assets/fonts/Gilroy/Gilroy-Medium.otf") format("woff");
+}
+
 .hero {
   &__background-image {
     width: 100%;
+  }
+
+  h1 {
+    font-family: "Gilroy";
+    font-weight: bold;
+  }
+
+  h3 {
+    font-family: "Gilroy";
+    font-weight: medium;
   }
 
   &__images {
@@ -115,18 +141,6 @@ export default {
 
 .row--thoughts {
   height: 100%;
-}
-
-h3 {
-  position: static;
-  left: 0px;
-  margin-right: 0px;
-  margin-bottom: 10px;
-  padding-left: 0px;
-  clear: none;
-  color: #28dc8e;
-  font-size: 18px;
-  font-weight: 700;
 }
 
 p {
